@@ -1,0 +1,17 @@
+# docker-compose.yml
+version: '3.1'
+
+services:
+  s_pytorch:
+    container_name: c_pytorch
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/tf/notebooks
+    command: jupyter lab --ip=0.0.0.0 --no-browser --allow-root --notebook-dir=/tf/notebooks
