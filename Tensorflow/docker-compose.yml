@@ -1,0 +1,13 @@
+# docker-compose.yml
+version: '3.10'
+
+services:
+  tensorflow:
+    container_name: c_tensorflow
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PYTHONUNBUFFERED=1
+
