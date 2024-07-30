@@ -18,7 +18,7 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ./Jupyter/notebooks:/home/jovyan/work/notebooks 
+      - ./JupyterNotebooks/notebooks:/home/jovyan/work/notebooks 
     user: "root"
     environment:
       - NB_UID=1000
